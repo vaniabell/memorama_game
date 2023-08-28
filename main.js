@@ -7,7 +7,7 @@ let secondResult= null;
 let movements= 0;
 let successes= 0;
 let temporizer= false;
-let timer=30;
+let timer=3;
 let timeBack= null;
 
 
@@ -18,7 +18,7 @@ let showTimer= document.getElementById(`restTimer`);
 
 numbers= numbers.sort(()=>{return Math.random()-0.5});
  function countTime() {
-  setInterval(()=>{
+  timeBack=setInterval(()=>{
   timer--;
   showTimer.innerHTML= `time: ${timer} seconds`;
   if (timer==0) {
@@ -28,9 +28,11 @@ numbers= numbers.sort(()=>{return Math.random()-0.5});
   },1000);
  }
 function blockCards(){
-  for(let i =0; i <=15;i++){
-    let blockCards = document.getElementById(i);
-    
+  for(let i =0; i <= 15;i++){
+    let blockCard = document.getElementById(i);
+    blockCard.innerHTML=numbers[i];
+    blockCard.disabled=true;
+
 
   }
 

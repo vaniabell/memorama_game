@@ -7,7 +7,7 @@ let secondResult= null;
 let movements= 0;
 let successes= 0;
 let temporizer= false;
-let timer=3;
+let timer=30;
 let timeBack= null;
 
 
@@ -24,6 +24,19 @@ numbers= numbers.sort(()=>{return Math.random()-0.5});
   if (timer==0) {
     clearInterval(timeBack);
     blockCards();
+        Swal.fire({
+      title: 'GAME OVER 🥺💔',
+      width: 600,
+      padding: '3em',
+      color: 'rgba(0,255,255)',
+      background: 'rgba(255, 255, 255, 0.2)',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://sweetalert2.github.io/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+    })
   }
   },1000);
  }
@@ -76,7 +89,9 @@ Card1.disabled= true;
     if (successes ==8) {
       summarySuccesses.innerHTML= `successes: ${successes}🌈✨🤠`
       showmovements.innerHTML= `movements: ${movements} 🦖✨`
+
     }
+
   
   }else{
     //volver a tapar cards
@@ -86,7 +101,7 @@ Card1.disabled= true;
     Card1.disabled= false;
     Card2.disabled= false;
     flippedCard = 0;
-    },2000);
+    },800);
   }
 
 } 

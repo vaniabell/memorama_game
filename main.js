@@ -24,12 +24,16 @@ numbers= numbers.sort(()=>{return Math.random()-0.5});
   if (timer==0) {
     clearInterval(timeBack);
     blockCards();
+    //sweet alert aqui 
         Swal.fire({
       title: 'GAME OVER 🥺💔',
+      allowOutEscapeKey: false,
+      allowOutsideClick:false,
+      allowEnterKey: false,
       width: 600,
       padding: '3em',
-      color: 'rgba(0,255,255)',
-      background: 'rgba(255, 255, 255, 0.2)',
+      color: '#716add',
+      background: 'url("https://media.tenor.com/uXDswYPRqrMAAAAC/glitter-sparkle.gif")',
       backdrop: `
         rgba(0,0,123,0.4)
         url("https://sweetalert2.github.io/images/nyan-cat.gif")

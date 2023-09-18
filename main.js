@@ -7,7 +7,8 @@ let secondResult= null;
 let movements= 0;
 let successes= 0;
 let temporizer= false;
-let timer=30;
+let timer=35;
+let timerInicial=35;
 let timeBack= null;
 
 
@@ -16,6 +17,7 @@ let showmovements= document.getElementById(`movements`);
 let summarySuccesses= document.getElementById(`successes`);
 let showTimer= document.getElementById(`restTimer`);
 
+//generacion de los numeros random
 numbers= numbers.sort(()=>{return Math.random()-0.5});
  function countTime() {
   timeBack=setInterval(()=>{
@@ -23,31 +25,14 @@ numbers= numbers.sort(()=>{return Math.random()-0.5});
   showTimer.innerHTML= `time: ${timer} seconds`;
   if (timer==0) {
     clearInterval(timeBack);
-    blockCards();
-    //sweet alert aqui 
-        Swal.fire({
-      title: 'GAME OVER 🥺💔',
-      allowOutEscapeKey: false,
-      allowOutsideClick:false,
-      allowEnterKey: false,
-      width: 600,
-      padding: '3em',
-      color: '#716add',
-      background: 'url("https://media.tenor.com/uXDswYPRqrMAAAAC/glitter-sparkle.gif")',
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-    })
+    blockCards();    
   }
   },1000);
  }
 function blockCards(){
   for(let i =0; i <= 15;i++){
     let blockCard = document.getElementById(i);
-    blockCard.innerHTML=numbers[i];
+    blockCard.innerHTML=` <img src="./images/${numbers[i]}.png" alt="">`;;
     blockCard.disabled=true;
 
 
@@ -62,22 +47,20 @@ function FlipCard(id){
     temporizer= true;
   }
 flippedCard++;
-console.log(flippedCard)
-
 
 if (flippedCard == 1) {
 
   //mostrar el primer numero
 Card1= document.getElementById(id);
 firstResult= numbers[id]
-Card1.innerHTML = numbers[id];
+Card1.innerHTML = ` <img src="./images/${firstResult}.png" alt="">`;
 //desabilitar el primer boton 
 Card1.disabled= true;
 
 }else if (flippedCard==2) {
   Card2= document.getElementById(id);
   secondResult=numbers[id];
-  Card2.innerHTML=secondResult;
+  Card2.innerHTML= ` <img src="./images/${secondResult}.png" alt="">`;;
 
  //deshabilitar segundo boton
   Card2.disabled=true;
@@ -91,12 +74,12 @@ Card1.disabled= true;
     summarySuccesses.innerHTML=`successes: ${successes}`;
     //este if es solo para cuando termina eljuego muestre los emojis 
     if (successes ==8) {
-      summarySuccesses.innerHTML= `successes: ${successes}🌈✨🤠`
-      showmovements.innerHTML= `movements: ${movements} 🦖✨`
+      summarySuccesses.innerHTML = `successes: ${successes}🌈✨🤠` 
+      showTimer.innerHTML=`Awesome it only took you: ${timerInicial- timer} seconds 😮👌`
+      showmovements.innerHTML = `movements: ${movements} 🦖✨` 
+      clearInterval(timeBack);
 
     }
-
-  
   }else{
     //volver a tapar cards
     setTimeout(()=>{
@@ -105,7 +88,7 @@ Card1.disabled= true;
     Card1.disabled= false;
     Card2.disabled= false;
     flippedCard = 0;
-    },800);
+    },600);
   }
 
 } 

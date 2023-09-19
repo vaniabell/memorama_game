@@ -414,3 +414,6 @@ button:hover{
 img{
   width: 80%;
 }
+button.swal2-confirm.swal2-styled{
+    height: 40px;
+}

@@ -39,7 +39,7 @@ function countTime() {
         background: 'url("https://media.tenor.com/uXDswYPRqrMAAAAC/glitter-sparkle.gif")',
         backdrop: ` 
           rgba(0,0,123,0.4) 
-          url("https://www.nyan.cat/cats/balloon.gif") 
+          url("https://media.tenor.com/sK-sOrNx5SAAAAAj/loof-loof-and-timmy.gif") 
           left top 
           no-repeat 
         `
@@ -113,7 +113,7 @@ function FlipCard(id) {
           background: 'url("https://media.tenor.com/uXDswYPRqrMAAAAC/glitter-sparkle.gif")',
           backdrop: ` 
                 rgba(0,0,123,0.4) 
-                url("https://sweetalert2.github.io/images/nyan-cat.gif") 
+                url("https://media.tenor.com/oplwnkmynqwAAAAj/loof-and-timmy-loof.gif") 
                 left top 
                 no-repeat 
               `

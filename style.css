@@ -37,7 +37,7 @@ button:hover{
 }
 
 
-.stars {
+/*.stars {
  
     top: 0;
     left: 0;
@@ -409,7 +409,7 @@ button:hover{
     50% {
         opacity: 0.6;
     }
-}
+}*/
 
 img{
   width: 100%;
